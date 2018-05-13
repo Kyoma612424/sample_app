@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-
+      #save できた時の応答
     else
       render'new'
     end
