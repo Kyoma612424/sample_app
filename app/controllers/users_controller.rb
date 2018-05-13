@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    flash[:success]="Welcome to the Sample App"
     @user = User.find(params[:id])
   end
 
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #save できた時の応答
+      redirect_to @user
     else
       render'new'
     end
